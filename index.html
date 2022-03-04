@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src='.\index.js'></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>Jquery Test</header>
+  <div id='container'>
+    <h1 id='heading1'>Test1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dictum risus at posuere dapibus. Cras finibus
+      posuere nisi, id pellentesque dolor luctus quis. Praesent vitae iaculis ex. Nam maximus, erat lacinia cursus
+      lacinia, quam est consectetur urna, non efficitur mauris eros ut dui. Sed sed quam nulla. Maecenas vulputate justo
+      nisl, ut condimentum neque pretium in. Nulla accumsan lectus non felis ornare fringilla. Nunc egestas orci a erat
+      condimentum, eget elementum metus varius. Suspendisse et ligula et leo vestibulum varius. Maecenas sit amet
+      viverra justo.</p>
+    <h1 id='heading2'>Test2</h1>
+    <p>Vivamus sit amet erat ornare, sollicitudin mauris sit amet, aliquet tellus. Nullam auctor erat in ligula
+      suscipit, sit amet condimentum nulla pulvinar. In imperdiet maximus justo, a faucibus sapien iaculis sed.
+      Vestibulum mattis ligula vel placerat euismod. Mauris non nulla leo. Maecenas hendrerit egestas ante. Donec tellus
+      est, tempus ut aliquam ac, bibendum ut lectus. Aenean ut libero metus. Morbi non lacus vel metus feugiat
+      ultricies. Aenean eu ligula lorem. Quisque in egestas <span>purus</span>, nec fermentum ipsum. Aliquam pretium,
+      diam vel porta mollis, urna dui pellentesque quam, ut eleifend libero dolor porttitor neque. Mauris sit amet ante
+      ac nulla tincidunt sodales. Maecenas imperdiet tortor vel ligula viverra, ac luctus nunc luctus.</p>
+
+    <ul id='list'>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item</li>
+    </ul>
+  </div>
+  <div class='chartcontainer'>
+    <div class='chartspace1'>
+    </div>
+    <div class='chartspace2'>
+    </div>
+    <div class='chartspace3'>
+      
+    </div>
+  </div>
+</body>
+<script>
+
+  // First chart setup
+  const data1 = {
+    title: 'Single bar',
+    data: {
+      Banana: 10,
+      Apple: 20,
+      Orange: 30,
+      Pear: 40, 
+      Avocado: 50
+    }
+  }
+  const data2 = {
+    title: 'Multibar',
+    data: {
+      Banana: [15, 25, 5],
+      Apple: [40, 63, 3],
+      Orange: [30, 12.5, 2],
+      Pear: [21, 10, 1],
+      Avocado: [10, 10, 30],
+    }
+  }
+  const element1 = $('div.chartspace1')
+
+  // Second chart setup
+  const options1 = {
+    title: {
+      size: "35px",
+      color: "black"
+    },
+    bar: {
+      color: "lightgreen",
+      // Scale padding, 1 is default of 2% padding, increase or decrease to change spacing between and width of bars
+      left: 1,
+      right: 1, 
+    },
+  }
+  const options2 = {
+    title: {
+      size: "30px",
+      color: "black"
+    },
+    bar: {
+      color: "skyblue",
+      // Scale padding, 1 is default of 2% padding, increase or decrease to change spacing between and width of bars
+      left: 1,
+      right: 1, 
+    },
+    multibar: {
+      values: ["First", "Second", "Third"],
+      colors: ["blue", "yellow", "white"]
+    },
+  }
+  const element2 = $('div.chartspace2')
+
+  drawBarChart(data1, element1, options1)
+  drawBarChart(data2, element2, options2)
+</script>
+<style>
+  body {
+    font-size: 17px;
+    font-family: arial;
+    background: darkgrey;
+    display: inline-block;
+  }
+
+  header {
+    background-color: grey;
+    color: white;
+    font-size: large;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #container {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .chartspace1 {
+    width: 700px;
+    margin: auto;
+    height: 400px;
+    padding: 2%;
+  }
+
+  .chartspace2 {
+    width: 700px;
+    margin: auto;
+    height: 400px;
+    padding: 2%;
+  }
+
+  .chartspace3 {
+    width: 700px;
+    margin: auto;
+    height: 400px;
+    padding: 2%;
+  }
+
+  .title {
+    grid-area: header;
+    place-self: center stretch;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .sidevalue {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+</style>
+
+</html>
