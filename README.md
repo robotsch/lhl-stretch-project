@@ -1,7 +1,8 @@
 # lhl-stretch-project
 
 This is a small semi-customizable bar chart library and example page designed to meet as many requirements as possible from the Lighthouse Labs pre-course work. 
-It can be used to generate a single or multibar chart on a given web page, and requires no external libraries to function.
+It can be used to generate a single or multibar chart on a given web page.
+This project uses jQuery.
 
 # Single bar example
 ![image](https://user-images.githubusercontent.com/40985112/156846359-8d430e72-9a6d-4f55-b58d-9a319b2ad603.png)
@@ -51,4 +52,4 @@ The following will input will generate the multiple bar chart displayed in the a
  - Stacked bar chart configuration
  - Horizontal bar chart configuration
 
-Thank you Stack Overflow, as always
+Thank you Stack Overflow, as alway
